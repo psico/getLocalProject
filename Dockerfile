@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libpng-dev \
 		git-all \
+		zip \
+		unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd bcmath pdo_mysql
 	
@@ -18,5 +20,8 @@ RUN composer config --global --auth github-oauth.github.com 7edea3b3e7c5e8dd0cac
 WORKDIR /var/www/html/getLocalProject
 
 RUN composer install
+
+EXPOSE 9000
+EXPOSE 8000
 
 #CMD php /usr/local/bin/composer.phar install
