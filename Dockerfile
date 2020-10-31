@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer config --global --auth github-oauth.github.com 7edea3b3e7c5e8dd0cac6e91c60f73469c2b1c76
+RUN composer config --global --auth github-oauth.github.com COLOQUE_O_TOKEN_AQUI
 
 WORKDIR /var/www/html/getLocalProject
 
