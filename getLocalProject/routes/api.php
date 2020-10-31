@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('localizacao', 'Api\LocalizacaoController@getAllLocalizacao');
-Route::get('localizacao/{id}', 'Api\LocalizacaoController@getLocalizacao');
-Route::post('localizacao', 'Api\LocalizacaoController@postLocalizacao');
+//Route::get('localizacao', 'Api\LocalizacaoController@getAllLocalizacao');
+//Route::get('localizacao/{id}', 'Api\LocalizacaoController@getLocalizacao');
+//Route::post('localizacao', 'Api\LocalizacaoController@postLocalizacao');
+
+Route::get('localizacao', [\App\Http\Controllers\Api\LocalizacaoController::class, 'getAllLocalizacao']);
+Route::get('localizacao/{id}', [\App\Http\Controllers\Api\LocalizacaoController::class, 'getLocalizacao']);
+Route::post('localizacao', [\App\Http\Controllers\Api\LocalizacaoController::class, 'postLocalizacao']);
