@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('localizacao', 'Api\LocalizacaoController@getAllLocalizacao');
+Route::get('localizacao/{id}', 'Api\LocalizacaoController@getLocalizacao');
+Route::post('localizacao', 'Api\LocalizacaoController@postLocalizacao');
