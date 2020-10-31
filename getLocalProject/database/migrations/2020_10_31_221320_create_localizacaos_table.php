@@ -15,6 +15,9 @@ class CreateLocalizacaosTable extends Migration
     {
         Schema::create('localizacaos', function (Blueprint $table) {
             $table->id();
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
