@@ -15,13 +15,13 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer config --global --auth github-oauth.github.com COLOQUE_O_TOKEN_AQUI
-
 WORKDIR /var/www/html/getLocalProject
 
-RUN composer install
+RUN composer config --global --auth github-oauth.github.com COLOQUE_O_TOKEN_AQUI
 
-EXPOSE 9000
-EXPOSE 8000
+RUN composer install --no-dev --no-interaction -o
 
-#CMD php /usr/local/bin/composer.phar install
+EXPOSE 5001
+
+#CMD php artisan serve --host 0.0.0.0 --port 5001
+#CMD php ./ serve --host 0.0.0.0 --port 5001

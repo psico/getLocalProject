@@ -1,8 +1,31 @@
-version: "3.7" 
+version: "3.7"
 services:
   php:
-    build:
-      context: .
+    working_dir: /var/www/html/getLocalProject
+    build: .
     ports:
       - "8000:8000"
-    command: php -S 0.0.0.0:8000 -t public/
+      - "5001:5001"
+    volumes:
+      - .:/var/www/html/
+
+  #MySQL Service
+#  db:
+#    image: mysql:5.7.22
+#    container_name: db
+#    restart: unless-stopped
+#    tty: true
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_DATABASE: laravel
+#      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+#      SERVICE_TAGS: dev
+#      SERVICE_NAME: mysql
+#    networks:
+#      - app-network
+
+#Docker Networks
+#networks:
+#  app-network:
+#    driver: bridge
