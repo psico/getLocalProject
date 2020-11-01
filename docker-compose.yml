@@ -7,25 +7,49 @@ services:
       - "8000:8000"
       - "5001:5001"
     volumes:
-      - .:/var/www/html/
+      - ./getLocalProject/app:/var/www/html/getLocalProject/app
+      - ./getLocalProject/bootstrap:/var/www/html/getLocalProject/bootstrap
+      - ./getLocalProject/config:/var/www/html/getLocalProject/config
+      - ./getLocalProject/database:/var/www/html/getLocalProject/database
+      - ./getLocalProject/public:/var/www/html/getLocalProject/public
+      - ./getLocalProject/resources:/var/www/html/getLocalProject/resources
+      - ./getLocalProject/routes:/var/www/html/getLocalProject/routes
+      - ./getLocalProject/storage:/var/www/html/getLocalProject/storage
+      - ./getLocalProject/tests:/var/www/html/getLocalProject/tests
+      - ./getLocalProject/.editorconfig:/var/www/html/getLocalProject/.editorconfig
+      - ./getLocalProject/.env:/var/www/html/getLocalProject/.env
+      - ./getLocalProject/.env.example:/var/www/html/getLocalProject/.env.example
+      - ./getLocalProject/.styleci.yml:/var/www/html/getLocalProject/.styleci.yml
+      - ./getLocalProject/artisan:/var/www/html/getLocalProject/artisan
+      - ./getLocalProject/composer.json:/var/www/html/getLocalProject/composer.json
+      - ./getLocalProject/composer.lock:/var/www/html/getLocalProject/composer.lock
+      - ./getLocalProject/package.json:/var/www/html/getLocalProject/package.json
+      - ./getLocalProject/phpunit.xml:/var/www/html/getLocalProject/phpunit.xml
+      - ./getLocalProject/server.php:/var/www/html/getLocalProject/server.php
+      - ./getLocalProject/webpack.mix.js:/var/www/html/getLocalProject/webpack.mix.js
+    links:
+      - db
+    command: bash -c "composer install && php artisan serve --host 0.0.0.0 --port 5001"
+    networks:
+      - app-network
 
   #MySQL Service
-#  db:
-#    image: mysql:5.7.22
-#    container_name: db
-#    restart: unless-stopped
-#    tty: true
-#    ports:
-#      - "3306:3306"
-#    environment:
-#      MYSQL_DATABASE: laravel
-#      MYSQL_ROOT_PASSWORD: your_mysql_root_password
-#      SERVICE_TAGS: dev
-#      SERVICE_NAME: mysql
-#    networks:
-#      - app-network
+  db:
+    image: mysql:5.7.22
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: getLocalProject
+      MYSQL_ROOT_PASSWORD: mysql_root_password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - app-network
 
 #Docker Networks
-#networks:
-#  app-network:
-#    driver: bridge
+networks:
+  app-network:
+    driver: bridge
