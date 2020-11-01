@@ -33,7 +33,9 @@ Projeto para coletar dados de localização
 
  3 - Com o projeto baixado é preciso gerar um token no github (algumas bibliotecas do laravel exigem isso), para gerar essa chave entre no endereço https://github.com/settings/tokens e click em "Generate New Token" (é necessário loggar no github)
 
- 4 - Com o token gerado em mãos, abra o arquivo que está em getLocalProject\Dockerfile
+ 4 - Com o token gerado em mãos, abra o arquivo do endereço abaixo com um editor de texto como bloco de notas ou similar: 
+ 
+    getLocalProject\Dockerfile
 
  5 - No arquivo aberto, na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso pode salvar e fechar o arquivo.
 
