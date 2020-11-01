@@ -1,8 +1,38 @@
 version: "3.7"
 services:
+  #MySQL Service
+#  db:
+#    image: mysql:5.7.22
+#    container_name: db
+#    restart: always
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_DATABASE: getLocalProject
+#      MYSQL_ROOT_PASSWORD: mysql_root_password
+#    command:
+#      - mysqld
+#      - --default_storage_engine=InnoDB
+#      - --character-set-server=utf8
+#      - --collation-server=utf8_general_ci
+#      - --init-connect=SET NAMES utf8
+#      - --innodb_log_file_size=256M
+#      - --innodb_buffer_pool_size=3GB
+#      - --max_allowed_packet=20M
+#      - --bulk_insert_buffer_size=20M
+#      - --query_cache_size=32M
+#      - --skip-character-set-client-handshake
+#      - --skip-host-cache
+#      - --wait_timeout=600
+#    networks:
+#      - app-network
+
+  #PHP Laravel Service
   php:
     working_dir: /var/www/html/getLocalProject
     build: .
+    restart: always
+    tty: true
     ports:
       - "8000:8000"
       - "5001:5001"
@@ -15,6 +45,7 @@ services:
       - ./getLocalProject/resources:/var/www/html/getLocalProject/resources
       - ./getLocalProject/routes:/var/www/html/getLocalProject/routes
       - ./getLocalProject/storage:/var/www/html/getLocalProject/storage
+#      - ./getLocalProject/vendor:/var/www/html/getLocalProject/vendor
       - ./getLocalProject/tests:/var/www/html/getLocalProject/tests
       - ./getLocalProject/.editorconfig:/var/www/html/getLocalProject/.editorconfig
       - ./getLocalProject/.env:/var/www/html/getLocalProject/.env
@@ -27,29 +58,17 @@ services:
       - ./getLocalProject/phpunit.xml:/var/www/html/getLocalProject/phpunit.xml
       - ./getLocalProject/server.php:/var/www/html/getLocalProject/server.php
       - ./getLocalProject/webpack.mix.js:/var/www/html/getLocalProject/webpack.mix.js
-    links:
-      - db
+#    depends_on:
+#      - db
+#    links:
+#      - db
     command: bash -c "composer install && php artisan serve --host 0.0.0.0 --port 5001"
-    networks:
-      - app-network
-
-  #MySQL Service
-  db:
-    image: mysql:5.7.22
-    container_name: db
-    restart: unless-stopped
-    tty: true
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_DATABASE: getLocalProject
-      MYSQL_ROOT_PASSWORD: mysql_root_password
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    networks:
-      - app-network
+#    command: bash -c "composer install && php artisan migrate && php artisan serve --host 0.0.0.0 --port 5001"
+#    command: bash -c "composer install && php artisan make:migration 2014_10_12_000000_create_users_table && php artisan make:migration 2014_10_12_100000_create_password_resets_table && php artisan make:migration 2019_08_19_000000_create_failed_jobs_table && php artisan make:migration 2020_10_31_221320_create_localizacaos_table && php artisan serve --host 0.0.0.0 --port 5001"
+#    networks:
+#      - app-network
 
 #Docker Networks
-networks:
-  app-network:
-    driver: bridge
+#networks:
+#  app-network:
+#    driver: bridge
