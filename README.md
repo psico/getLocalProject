@@ -9,6 +9,20 @@ Projeto para coletar dados de localização
 
 
 
+## Tecnlogias usadas:
+ - Docker e DockerComposer - Criação do container com a aplicação
+ - Git e GitHub - Versionamento
+ - PHP - Linguagem de programação
+ - Composer - Instalar repositórios externos
+ - Laravel - Framework
+ - Model - Eloquent
+ - Migrations - Criar base de dados ao iniciar a aplicação
+ - Sqlite* - Base de dados
+ - PHPUnit - Teste automatizados
+ - Artisan - CLI do Laravel
+
+
+
 ## Passo-a-passo para fazer o projeto funcionar:
 
 1 - Ter instalado o docker e o docker-compose na maquina (no Windows normalmente o docker-compose é 
@@ -48,9 +62,15 @@ GET http://localhost:5001/api/localizacao/{id}
 POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&user_id={numero}
 
 
+## TESTES AUTOMATIZADOS
 
+docker ps
+getlocalproject_php
+docker exec -it f6cf938274ad bash
 
-
+/var/www/html/getLocalProject#
+php vendor/bin/phpunit
+php artisan test
 
 
 <!--
