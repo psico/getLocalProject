@@ -17,7 +17,7 @@ Projeto para coletar dados de localização
  - Laravel - Framework
  - Model - Eloquent
  - Migrations - Criar base de dados ao iniciar a aplicação
- - Sqlite* - Base de dados
+ - Sqlite - Base de dados
  - PHPUnit - Teste automatizados
  - Artisan - CLI do Laravel
 
@@ -39,7 +39,7 @@ Token" (é necessário loggar no github)
 5 - No arquivo aberto, na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso 
 pode salvar e fechar o arquivo.
 
-6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando: docker-compose up
+6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando (esse comando pode demorar um pouco até terminar): docker-compose up 
 
 7 - E se tudo deu certo basta acessar o endereço e aparecera a documentação do Laravel se estiver tudo certo: http://localhost:5001/
 
@@ -57,6 +57,11 @@ GET http://localhost:5001/api/localizacao
 GET http://localhost:5001/api/localizacao/{id}
 
 
+**Busca uma localização pelo id Usuário** 
+
+GET http://localhost:5001/api/localizacaoUser/{id}
+
+
 **Inserir uma localização** 
 
 POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&user_id={numero}
@@ -64,13 +69,15 @@ POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&
 
 ## TESTES AUTOMATIZADOS
 
-docker ps
-getlocalproject_php
-docker exec -it f6cf938274ad bash
-
-/var/www/html/getLocalProject#
-php vendor/bin/phpunit
-php artisan test
+### Para executar os teste automatizados será necessário entrar no container da aplicação, segue os passo-a-passo:
+1 - Com a aplicação ativa, execute esse comando para ver o ID do container: docker ps
+2 - O ID do container deve estar na primeira coluna listada e na coluna imagem deve estar escrito getlocalproject_php
+3 - Agora execute o esse comando subistituindo o COLOQUE_ID_CONTAINER pelo ID que conseguiu no comando anterior: docker exec -it COLOQUE_ID_CONTAINER bash
+4 - Pronto com isso você estará dentro do container.
+5 - Verifique se está na no diretorio: /var/www/html/getLocalProject#
+6 - Agora para executar os testes, escolha um dos dois comandos abaixo:
+        php vendor/bin/phpunit
+        php artisan test
 
 
 <!--
