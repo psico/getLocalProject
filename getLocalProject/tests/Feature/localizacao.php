@@ -39,6 +39,22 @@ class localizacao extends TestCase
     }
 
     /**
+     * Testando a rota GET /api/localizacaoUser/{id}.
+     *
+     * @return void
+     */
+    public function testGetApiLocalizacaoUserId()
+    {
+        $this->testPostApiLocalizacao();
+
+        $response = $this->get('/api/localizacaoUser/1');
+
+        $response->assertJson([]);
+
+        $response->assertStatus(200);
+    }
+
+    /**
      * Testando a rota POST /api/localizacao.
      *
      * @return void
