@@ -19,11 +19,9 @@ Token" (é necessário loggar no github)
 5 - No arquivo aberto na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso 
 pode salvar e fechar o arquivo.
 
-6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando(selecione o ponto no final também): docker build -t image-get-local-project .
+6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando: docker-compose up
 
-7 - Ainda no prompt/bash execute esse outro comando: docker run -p 5001:5001 image-get-local-project
-
-8 - Agora basta acessar o endereço: http://localhost:5001/
+7 - Agora basta acessar o endereço: http://localhost:5001/
 
 
 
@@ -39,7 +37,7 @@ docker run -p 5001:5001 -d --name devtest --mount source=myvol2,target=. image-g
 
 
 <!--
-6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando: docker-compose up
+6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando(selecione o ponto no final também): docker build -t image-get-local-project .
 
-7 - Agora basta acessar o endereço: http://localhost:8000/
+7 - Ainda no prompt/bash execute esse outro comando: docker run -p 5001:5001 image-get-local-project
 -->
