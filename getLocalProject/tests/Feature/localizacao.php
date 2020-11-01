@@ -22,20 +22,22 @@ class localizacao extends TestCase
         $response->assertStatus(200);
     }
 
-    //    /**
-//     * Testando a rota GET /api/localizacao/{id}.
-//     *
-//     * @return void
-//     */
-//    public function getApiLocalizacaoId()
-//    {
-//        $response = $this->get('/api/localizacao/1');
-//
-//        $response->assertJson([]);
-//
-//        $response->assertStatus(200);
-//    }
-//
+    /**
+     * Testando a rota GET /api/localizacao/{id}.
+     *
+     * @return void
+     */
+    public function testGetApiLocalizacaoId()
+    {
+        $this->testPostApiLocalizacao();
+
+        $response = $this->get('/api/localizacao/1');
+
+        $response->assertJson([]);
+
+        $response->assertStatus(200);
+    }
+
     /**
      * Testando a rota POST /api/localizacao.
      *
@@ -43,7 +45,7 @@ class localizacao extends TestCase
      */
     public function testPostApiLocalizacao()
     {
-        $response = $this->post('/api/localizacao?latitude=111111113&longitude=22222222&user_id=1');
+        $response = $this->post('/api/localizacao?latitude=111111111&longitude=22222222&user_id=1');
 
         $response->assertJson([
             "message" => "Localização inserida"
