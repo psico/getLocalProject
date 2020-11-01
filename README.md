@@ -25,13 +25,13 @@ pode salvar e fechar o arquivo.
 
 # ROTAS / ENDPOINTS
 
-# # Trazer todos as localizações inseridas
+## Trazer todos as localizações inseridas
 GET http://localhost:5001/api/localizacao
 
-# # Busca uma localização pelo id
+## Busca uma localização pelo id
 GET http://localhost:5001/api/localizacao/{id}
 
-# # Inserir uma localização
+## Inserir uma localização
 POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&user_id={numero}
 
 
