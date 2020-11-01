@@ -24,4 +24,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('localizacao', [\App\Http\Controllers\Api\LocalizacaoController::class, 'getAllLocalizacao']);
 Route::get('localizacao/{id}', [\App\Http\Controllers\Api\LocalizacaoController::class, 'getLocalizacao']);
+Route::get('localizacaoUser/{id}', [\App\Http\Controllers\Api\LocalizacaoController::class, 'getLocalizacaoUserId']);
 Route::post('localizacao', [\App\Http\Controllers\Api\LocalizacaoController::class, 'postLocalizacao']);

@@ -24,6 +24,17 @@ class LocalizacaoController extends Controller
         }
     }
 
+    public function getLocalizacaoUserId($id) {
+        if (localizacao::where('user_id', $id)->exists()) {
+            $localizacao = localizacao::where('user_id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($localizacao, 200);
+        } else {
+            return response()->json([
+                "message" => "Não foi encontrado registros de localização para esse usuário"
+            ], 404);
+        }
+    }
+
     public function postLocalizacao(Request $request) {
         $localizacao = new localizacao();
         $localizacao->latitude = $request->latitude;
