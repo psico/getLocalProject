@@ -27,7 +27,7 @@ pode salvar e fechar o arquivo.
 
 6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando: docker-compose up
 
-7 - Agora basta acessar o endereço: http://localhost:5001/
+7 - E se tudo deu certo basta acessar o endereço e aparecera a documentação do Laravel se estiver tudo certo: http://localhost:5001/
 
 
 
