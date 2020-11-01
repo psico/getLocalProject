@@ -3,8 +3,10 @@
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jo%C3%A3o-gabriel-dos-santos-rodrigues-34378323/?locale=en_US)](https://www.linkedin.com/in/jo%C3%A3o-gabriel-dos-santos-rodrigues-34378323/?locale=en_US)
 
 
+
 ## getLocalProject
 Projeto para coletar dados de localização
+
 
 
 ## Passo-a-passo para fazer o projeto funcionar:
@@ -35,9 +37,11 @@ pode salvar e fechar o arquivo.
 
 GET http://localhost:5001/api/localizacao
 
+
 **Busca uma localização pelo id** 
 
 GET http://localhost:5001/api/localizacao/{id}
+
 
 **Inserir uma localização** 
 
