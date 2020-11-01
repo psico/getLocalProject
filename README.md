@@ -67,12 +67,19 @@ POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&
 
 ### Para executar os teste automatizados será necessário entrar no container da aplicação, segue os passo-a-passo:
 1 - Com a aplicação ativa, execute esse comando para ver o ID do container: docker ps
+
 2 - O ID do container deve estar na primeira coluna listada e na coluna imagem deve estar escrito getlocalproject_php
+
 3 - Agora execute o esse comando subistituindo o COLOQUE_ID_CONTAINER pelo ID que conseguiu no comando anterior: docker exec -it COLOQUE_ID_CONTAINER bash
+
 4 - Pronto com isso você estará dentro do container.
+
 5 - Verifique se está no diretório: /var/www/html/getLocalProject#
+
 6 - Agora para executar os testes, escolha um dos dois comandos abaixo:
+        
         php vendor/bin/phpunit
+        
         php artisan test
 
 
