@@ -9,13 +9,15 @@ use Tests\TestCase;
 class localizacao extends TestCase
 {
     /**
-     * A basic feature test example.
+     * Testando a rota de /api/localizacao.
      *
      * @return void
      */
-    public function testExample()
+    public function apiLocalizacao()
     {
         $response = $this->get('/api/localizacao');
+
+        $response->assertJson([]);
 
         $response->assertStatus(200);
     }
