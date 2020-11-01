@@ -1,8 +1,11 @@
-# getLocalProject
+## getLocalProject
 Projeto para coletar dados de localização
 
+## João Gabriel dos Santos Rodrigues
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=)](https://github.com/psico)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jo%C3%A3o-gabriel-dos-santos-rodrigues-34378323/?locale=en_US)](https://www.linkedin.com/in/jo%C3%A3o-gabriel-dos-santos-rodrigues-34378323/?locale=en_US)
 
-# Passo-a-passo para fazer o projeto funcionar:
+## Passo-a-passo para fazer o projeto funcionar:
 
 1 - Ter instalado o docker e o docker-compose na maquina (no Windows normalmente o docker-compose é 
 instalado junto do docker).
@@ -23,15 +26,15 @@ pode salvar e fechar o arquivo.
 7 - Agora basta acessar o endereço: http://localhost:5001/
 
 
-# ROTAS / ENDPOINTS
+## ROTAS / ENDPOINTS
 
-## Trazer todos as localizações inseridas
+**Trazer todos as localizações inseridas**
 GET http://localhost:5001/api/localizacao
 
-## Busca uma localização pelo id
+**Busca uma localização pelo id**
 GET http://localhost:5001/api/localizacao/{id}
 
-## Inserir uma localização
+**Inserir uma localização**
 POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&user_id={numero}
 
 
