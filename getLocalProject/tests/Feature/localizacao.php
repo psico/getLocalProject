@@ -9,11 +9,11 @@ use Tests\TestCase;
 class localizacao extends TestCase
 {
     /**
-     * Testando a rota de /api/localizacao.
+     * Testando a rota GET /api/localizacao.
      *
      * @return void
      */
-    public function apiLocalizacao()
+    public function getApiLocalizacao()
     {
         $response = $this->get('/api/localizacao');
 
