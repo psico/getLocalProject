@@ -36,7 +36,7 @@ Token" (é necessário loggar no github)
 
 4 - Com o token gerado em mãos, abra o arquivo que está em getLocalProject\Dockerfile
 
-5 - No arquivo aberto na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso 
+5 - No arquivo aberto, na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso 
 pode salvar e fechar o arquivo.
 
 6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando: docker-compose up
