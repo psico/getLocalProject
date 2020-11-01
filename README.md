@@ -25,19 +25,15 @@ Projeto para coletar dados de localização
 
 ## Passo-a-passo para fazer o projeto funcionar:
 
-1 - Ter instalado o docker e o docker-compose na maquina (no Windows normalmente o docker-compose é 
-instalado junto do docker).
+1 - Ter instalado o docker e o docker-compose na maquina (no Windows normalmente o docker-compose é instalado junto do docker).
 
 2 - Baixar o projeto do github no seguinte endereço: https://github.com/psico/getLocalProject
 
-3 - Com o projeto baixado é preciso gerar um token no github (algumas bibliotecas do laravel exigem essa 
-chave), para gerar essa chave entre no endereço https://github.com/settings/tokens e click em "Generate New 
-Token" (é necessário loggar no github)
+3 - Com o projeto baixado é preciso gerar um token no github (algumas bibliotecas do laravel exigem isso), para gerar essa chave entre no endereço https://github.com/settings/tokens e click em "Generate New Token" (é necessário loggar no github)
 
 4 - Com o token gerado em mãos, abra o arquivo que está em getLocalProject\Dockerfile
 
-5 - No arquivo aberto, na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso 
-pode salvar e fechar o arquivo.
+5 - No arquivo aberto, na linha 20 subistitua o COLOQUE_O_TOKEN_AQUI pelo token gerado no github, feito isso pode salvar e fechar o arquivo.
 
 6 - Agora abra o prompt/bash no diretorio do projeto baixado e execute esse comando (esse comando pode demorar um pouco até terminar): docker-compose up 
 
@@ -74,7 +70,7 @@ POST http://localhost:5001/api/localizacao?latitude={numero}&longitude={numero}&
 2 - O ID do container deve estar na primeira coluna listada e na coluna imagem deve estar escrito getlocalproject_php
 3 - Agora execute o esse comando subistituindo o COLOQUE_ID_CONTAINER pelo ID que conseguiu no comando anterior: docker exec -it COLOQUE_ID_CONTAINER bash
 4 - Pronto com isso você estará dentro do container.
-5 - Verifique se está na no diretorio: /var/www/html/getLocalProject#
+5 - Verifique se está no diretório: /var/www/html/getLocalProject#
 6 - Agora para executar os testes, escolha um dos dois comandos abaixo:
         php vendor/bin/phpunit
         php artisan test
